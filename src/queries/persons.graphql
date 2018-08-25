@@ -1,0 +1,11 @@
+query StarwarsChars {
+  allPersons {
+    name
+    species {
+      name
+    }
+    homeworld {
+      name
+    }
+  }
+}
