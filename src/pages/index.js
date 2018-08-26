@@ -13,17 +13,20 @@ const IndexPage = () => (
 export default IndexPage
  */
 
- import React from "react";
+import React from "react";
 
-export default ({data: { starwars }}) => {
+export default  ({ data }) => {
+    console.log(data);
     return (
       <div>
         <h2>Starwars Characters</h2>
-        <ul>
-          {starwars.allPersons.edges.map(person => (
-            <li>{person.name}</li>
-          ))}
-        </ul>
+        {/* <ul>
+          {
+            data.allPersons.map(person => (
+              <li>{person.name}</li>
+            ))
+          }
+        </ul> */}
       </div>
     )
 }
@@ -31,17 +34,12 @@ export default ({data: { starwars }}) => {
 export const query = graphql`
   query StarwarsChars {
     allPersons {
-      edges {
-        node {
-          name
-          species {
-              name
-          }
-          homeworld {
-              name
-          }
-        }
-      }
+      birthYear
+      createdAt
+      isPublished
+      skinColor
+      eyeColor
+      name
     }
   }
 `

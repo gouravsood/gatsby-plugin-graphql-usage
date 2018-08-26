@@ -1,11 +1,10 @@
 query StarwarsChars {
   allPersons {
+    birthYear
+    createdAt
+    skinColor
+    eyeColor
     name
-    species {
-      name
-    }
-    homeworld {
-      name
-    }
+    isPublished
   }
 }
